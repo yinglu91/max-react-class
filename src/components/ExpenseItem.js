@@ -2,15 +2,15 @@ import ExpenseDate from './ExpenseDate'
 import './ExpenseItem.css'
 
 const ExpenseItem = (props) => {
-  const { item } = props
+  const { date, title, amount} = props.item
 
   return (
     <div className='expense-item'>
-      <ExpenseDate date={item.date} />
+      <ExpenseDate date={date} />
 
       <div className='expense-item__description'>
-        <h2>{item.title}</h2>
-        <div className='expense-item__price'>${item.amount}</div>
+        <h2>{title}</h2>
+        <div className='expense-item__price'>${amount}</div>
       </div>
     </div>
   )
