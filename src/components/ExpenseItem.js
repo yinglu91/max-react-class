@@ -1,8 +1,8 @@
 import ExpenseDate from './ExpenseDate'
 import './ExpenseItem.css'
 
-const ExpenseItem = (props) => {
-  const { date, title, amount} = props.item
+const ExpenseItem = ({ item }) => {
+  const { date, title, amount } = item
 
   return (
     <div className='expense-item'>
