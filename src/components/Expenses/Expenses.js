@@ -1,6 +1,6 @@
 import ExpenseItem from './ExpenseItem'
-import Card from './Card'
-import { expenseData } from '../data/expenseData'
+import Card from '../UI/Card'
+import { expenseData } from '../../data/expenseData'
 import './Expenses.css'
 
 const Expenses = () => {

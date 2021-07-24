@@ -1,4 +1,5 @@
-import Expenses from './components/Expenses'
+import React from 'react'
+import Expenses from './components/Expenses/Expenses'
 
 const App = () => {
   return (
@@ -10,3 +11,15 @@ const App = () => {
 }
 
 export default App
+
+// const App = () => {
+//   // under the hood (JSX):
+//   return React.createElement(
+//     'div',
+//     {},
+//     React.createElement('h2', {}, "Let's get started!"),
+//     React.createElement(Expenses, {})
+//   )
+
+//   Prefer, should be always use JSX
+// }
