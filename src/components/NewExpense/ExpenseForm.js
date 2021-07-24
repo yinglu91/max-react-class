@@ -55,9 +55,8 @@ const ExpenseForm = (props) => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
-          <input type='text' value={title} onChange={titleChangeHandler} />
+          <input type='text' value={title} onChange={setTitle} />
         </div>
-
         <div className='new-expense__control'>
           <label>Amount</label>
           <input
@@ -65,10 +64,9 @@ const ExpenseForm = (props) => {
             min='0.01'
             step='0.01'
             value={amount}
-            onChange={amountChangeHandler}
+            onChange={setAmount}
           />
         </div>
-
         <div className='new-expense__control'>
           <label>Date</label>
           <input
@@ -76,13 +74,12 @@ const ExpenseForm = (props) => {
             min='2019-01-01'
             max='2022-12-31'
             value={date}
-            onChange={dateChangeHandler}
+            onChange={setDate}
           />
         </div>
-
-        <div className='new-expense__actions'>
-          <button type='submit'>Add Expense</button>
-        </div>
+      </div>
+      <div className='new-expense__actions'>
+        <button type='submit'>Add Expense</button>
       </div>
     </form>
   )
