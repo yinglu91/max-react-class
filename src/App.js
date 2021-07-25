@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NewExpense from './components/NewExpense/NewExpense'
 import Expenses from './components/Expenses/Expenses'
 import { expenseData } from './data/expenseData'
 
 const App = () => {
-  const expenses = { ...expenseData }
+  const [expenses, setExpenses] = useState(expenseData)
 
   const addExpenseHandler = (expense) => {
-    console.log('In App.js')
     console.log(expense)
+    setExpenses((preExpenses) => [expense, ...preExpenses])
   }
 
   return (

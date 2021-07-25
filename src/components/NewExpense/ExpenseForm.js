@@ -20,8 +20,8 @@ const ExpenseForm = (props) => {
     // })
 
     // prefer:
-    // setUserInput((preState) => {
-    //   return { ...preState, title: event.target.value }
+    // setUserInput((preUserInput) => {
+    //   return { ...preUserInput, title: event.target.value }
     // })
   }
 
@@ -55,7 +55,7 @@ const ExpenseForm = (props) => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
-          <input type='text' value={title} onChange={setTitle} />
+          <input type='text' value={title} onChange={titleChangeHandler} />
         </div>
         <div className='new-expense__control'>
           <label>Amount</label>
@@ -64,7 +64,7 @@ const ExpenseForm = (props) => {
             min='0.01'
             step='0.01'
             value={amount}
-            onChange={setAmount}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className='new-expense__control'>
@@ -74,7 +74,7 @@ const ExpenseForm = (props) => {
             min='2019-01-01'
             max='2022-12-31'
             value={date}
-            onChange={setDate}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>
