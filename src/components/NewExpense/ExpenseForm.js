@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
+  const [isOpenForm, setIsOpenForm] = useState(false)
+
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
@@ -43,11 +45,29 @@ const ExpenseForm = (props) => {
     }
 
     props.onSaveExpenseData(expenseData)
+    setIsOpenForm(false)
 
     // clear form  -- due to Two-Way binding
     setTitle('')
     setAmount('')
     setDate('')
+  }
+
+  const cancelHandler = (event) => {
+    event.preventDefault()
+    setIsOpenForm(false)
+
+    setTitle('')
+    setAmount('')
+    setDate('')
+  }
+
+  if (!isOpenForm) {
+    return (
+      <div className='new-expense__actions'>
+        <button onClick={() => setIsOpenForm(true)}>Add New Expense</button>
+      </div>
+    )
   }
 
   return (
@@ -79,6 +99,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
+        <button onClick={cancelHandler}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
