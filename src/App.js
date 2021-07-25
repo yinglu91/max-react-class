@@ -4,7 +4,7 @@ import Expenses from './components/Expenses/Expenses'
 import { expenseData } from './data/expenseData'
 
 const App = () => {
-  const expenses = { ...expenseData }
+  const expenses = [ ...expenseData ]
 
   const addExpenseHandler = (expense) => {
     console.log('In App.js')
